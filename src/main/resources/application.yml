@@ -1,0 +1,39 @@
+spring:
+  application.name: '@project.name@'
+  mvc:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  output.ansi.enabled: always
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: log
+
+server.port: 8080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure.include: health,info
+  info:
+    build.enabled: true
+    env.enabled: true
+
+info.application:
+  name: '@project.name@'
+  description: '@project.description@'
+  version: '@project.version@'
+  build-timestamp: '@project.build.timestamp@'
+
+springdoc:
+  swagger-ui:
+    path: /doc
+    url: /v3/api-docs.yaml
+
+curriculum.generator.config:
+  page.size: "A4"
